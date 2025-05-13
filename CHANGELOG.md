@@ -19,3 +19,7 @@
 ### Removed
 
 - Deleted the `config.py` file as it was replaced by `config.toml`.
+
+### Updates
+
+- Added some basic filing download tests
