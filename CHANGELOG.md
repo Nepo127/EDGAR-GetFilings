@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD024 -->
+
 # Changelog
 
 ## [Unreleased]
@@ -22,6 +24,98 @@
 
 - Deleted the `config.py` file as it was replaced by `config.toml`.
 
+### Renamed
+
+- Renamed `edgar-file-parser.py to edgar_parser.py
+
 ### Updates
 
 - Added some basic filing download tests
+
+## EDGAR Parser Changelog
+
+### Version 1.2.0 (Current)
+
+#### Configuration System
+
+- Added TOML configuration file support using `tomli`
+- Implemented hierarchical configuration search in multiple locations
+- Added logging configuration options (console/file output, formats, levels)
+- Added batch processing configuration options
+
+#### Batch Processing
+
+- Enhanced batch processing method with configuration support
+- Added dynamic worker count adjustment
+- Improved error handling and reporting
+- Added comprehensive progress logging
+
+#### Document Processing
+
+- Added option to process all document types (`process_all_documents`)
+- Enhanced document type detection
+- Added fallback mechanisms for malformed documents
+
+#### Command Line Interface
+
+- Added `--config` parameter for specifying configuration file
+- Added `--process-all` flag to process all document sections
+- Enhanced help text and error messages
+
+### Version 1.1.0
+
+#### Filing Type Profiles
+
+- Expanded filing type profiles to cover 40+ SEC forms
+- Added extensive table identifiers for each filing type
+- Organized financial table identifiers by category
+- Added support for specialized forms (11-K, 13F, etc.)
+
+#### Table Extraction
+
+- Added plain text table extraction
+- Enhanced table title detection
+- Added support for both CSV and Excel output formats
+- Improved header detection in tables
+
+#### Section Extraction
+
+- Added fallback mechanisms for when heading tags aren't available
+- Added "Item X" section detection for 10-K/10-Q filings
+- Added content cleaning to remove navigation elements
+- Added individual section files for easier access
+
+#### Memory Optimization
+
+- Implemented chunked file reading
+- Added selective document processing
+- Improved memory management with early data release
+- Enhanced BeautifulSoup usage
+
+### Version 1.0.0 (Initial)
+
+#### Core Functionality
+
+- Basic parsing of EDGAR filing txt files
+- Extraction of HTML tables based on filing type
+- Section extraction based on heading hierarchy
+- Single file processing
+
+#### Organization
+
+- Input/output directory handling
+- Basic error handling
+- Simple command-line interface
+
+#### Document Processing
+
+- Basic document type detection
+- Selective processing of recognized filing types
+- Simple file saving mechanisms
+
+#### Notable Features
+
+- Type annotations throughout
+- Support for major filing types (10-K, 10-Q, Form 4)
+- Table identification based on IDs
+- Heading-based section extraction
