@@ -1,4 +1,25 @@
 # config.toml
 
-[settings]
-SEC_EDGAR_USER_AGENT="Horia Suciu (suciu.horia@gmail.com)"
+[edgar_file_grabber]
+SEC_EDGAR_USER_AGENT = "Horia Suciu (suciu.horia@gmail.com)"
+
+[Logging]
+# Available log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL
+level = "INFO"
+
+# Console output settings
+console_output = true
+console_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# File output settings
+file_output = false
+log_file = "edgar_parser.log"
+file_format = "%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s"
+
+[BatchProcessing]
+# Maximum number of parallel workers
+max_workers = 4
+
+# Memory optimization settings
+memory_optimize = true
+chunk_size = 1048576   # 1MB in bytes
