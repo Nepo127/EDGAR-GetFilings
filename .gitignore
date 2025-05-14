@@ -1,2 +1,23 @@
-/Users/horiasuciu/Projects/Python/DataCollectionScripts/EDGAR-GetFilings/saved-data/
-/Users/horiasuciu/Projects/Python/DataCollectionScripts/EDGAR-GetFilings/saved-data/tsla/10-K/
+#/Users/horiasuciu/Projects/Python/DataCollectionScripts/EDGAR-GetFilings/saved-data/
+#/Users/horiasuciu/Projects/Python/DataCollectionScripts/EDGAR-GetFilings/saved-data/tsla/10-K/
+#saved-data/.DS_Store
+
+
+# macOS system files
+.DS_Store
+
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+
+# VS Code settings
+.vscode/
+
+# Local data folders (adjust if needed)
+saved-data/
