@@ -1,2 +1,5 @@
 uvicorn
 secedgar
+beautifulsoup4
+pandas
+lxml

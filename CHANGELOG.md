@@ -15,6 +15,8 @@
 - Replaced `config.py` with a `config.toml` file for configuration.
 - Updated `main.py` to load and print configuration from `config.toml`.
 - Installed the `toml` package for parsing TOML files.
+- Added `edgar-file-parser.py` for parsing EDGAR filings and extracting financial tables.
+- Updated `requirements.txt` to include `beautifulsoup4`, `pandas`, and `lxml`.
 
 ### Removed
 
