@@ -12,8 +12,8 @@ console_output = true
 console_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
 # File output settings
-file_output = false
-log_file = "logs/edgar_parser.log"
+file_output = true
+log_file = "logs/edgar_get_filings.log"
 file_format = "%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s"
 
 [EdgarParser]

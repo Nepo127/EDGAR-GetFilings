@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: edgar_parser
+Version: 1.3.0
+Summary: Parser for SEC EDGAR filings
+Author: Horia & Matilda
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Office/Business :: Financial
+Requires-Python: >=3.7
+Requires-Dist: beautifulsoup4>=4.9.0
+Requires-Dist: lxml>=4.6.0
+Requires-Dist: pandas>=1.0.0
+Requires-Dist: chardet>=3.0.0
+Requires-Dist: tomli>=2.0.0; python_version < "3.11"
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

@@ -20,8 +20,9 @@ venv/
 .vscode/
 
 # Local data folders (adjust if needed)
-saved-data/
+data/
 
 # Log files folder 
 logs/
 
+.gitignore

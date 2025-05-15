@@ -1,0 +1,14 @@
+README.md
+setup.py
+edgar_parser/__init__.py
+edgar_parser/document.py
+edgar_parser/parser.py
+edgar_parser/sections.py
+edgar_parser/tables.py
+edgar_parser/utils.py
+edgar_parser.egg-info/PKG-INFO
+edgar_parser.egg-info/SOURCES.txt
+edgar_parser.egg-info/dependency_links.txt
+edgar_parser.egg-info/entry_points.txt
+edgar_parser.egg-info/requires.txt
+edgar_parser.egg-info/top_level.txt

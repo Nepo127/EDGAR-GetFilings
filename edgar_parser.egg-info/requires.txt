@@ -1,0 +1,7 @@
+beautifulsoup4>=4.9.0
+lxml>=4.6.0
+pandas>=1.0.0
+chardet>=3.0.0
+
+[:python_version < "3.11"]
+tomli>=2.0.0

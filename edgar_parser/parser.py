@@ -17,8 +17,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
 # Import from local modules
-from config_manager import ConfigManager
-from logger_manager import LoggingManager
+from app_utils import ConfigManager, LoggingManager
 from edgar_parser.document import DocumentParser
 from edgar_parser.tables import TableExtractor
 from edgar_parser.sections import SectionExtractor
