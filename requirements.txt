@@ -1,5 +1,15 @@
 uvicorn
 secedgar
-beautifulsoup4
-pandas
-lxml
+
+# Core dependencies
+tomli>=2.0.0
+requests>=2.25.0
+
+# Parser dependencies
+beautifulsoup4>=4.9.0
+lxml>=4.6.0
+pandas>=1.0.0
+chardet>=3.0.0
+
+# Development dependencies
+pytest>=7.0.0

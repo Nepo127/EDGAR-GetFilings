@@ -1,4 +1,4 @@
-# EDGAR-GetFilings
+# EDGAR-Data-Extractor
 
 This is a Python project that uses `uvicorn` to run a basic application. The project includes a simple `main.py` script that prints "Hello, World!" when executed.
 
@@ -17,4 +17,4 @@ This is a Python project that uses `uvicorn` to run a basic application. The pro
    ```
 
 3. This application uses secedgar package that automates the file extraction in bulk.
-4. 
+4.
