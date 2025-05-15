@@ -21,3 +21,7 @@ venv/
 
 # Local data folders (adjust if needed)
 saved-data/
+
+# Log files folder 
+logs/
+

@@ -13,13 +13,176 @@ console_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
 # File output settings
 file_output = false
-log_file = "edgar_parser.log"
+log_file = "logs/edgar_parser.log"
 file_format = "%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s"
 
-[BatchProcessing]
+[EdgarParser]
+# Main EdgarParser configuration
+process_all_documents = false
+default_ticker = "UNKNOWN"
+
+[EdgarParser.BatchProcessing]
 # Maximum number of parallel workers
 max_workers = 4
 
 # Memory optimization settings
 memory_optimize = true
 chunk_size = 1048576   # 1MB in bytes
+
+[EdgarParser.TableProcessing]
+extract_html_tables = true
+extract_text_tables = true
+max_tables_per_document = 100
+
+[EdgarParser.TextTablePatterns]
+# Common patterns for table detection in plain text
+patterns = [
+    "^\\s*[-+]{3,}\\s+[-+]{3,}",                 # Table with --- separator rows
+    "^\\s*[|]{1}\\s+.*\\s+[|]{1}$",              # Table with | separators
+    "^\\s*\\w+\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+", # Financial tables with numbers
+]
+
+[EdgarParser.FilingTypeProfiles]
+
+# Annual Reports
+[EdgarParser.FilingTypeProfiles."10-K"]
+# Balance Sheets
+balance_sheets = [
+    "consolidated_balance_sheets",
+    "consolidated_statement_of_financial_position",
+    "balance_sheets",
+    "statement_of_financial_position",
+    "balance_sheet",
+]
+
+# Income Statements
+income_statements = [
+    "consolidated_statements_of_operations",
+    "consolidated_statements_of_income",
+    "statements_of_operations",
+    "statements_of_income",
+    "income_statements",
+    "consolidated_statements_of_earnings",
+    "statements_of_earnings",
+    "consolidated_statements_of_comprehensive_income",
+    "statements_of_comprehensive_income",
+]
+
+# Cash Flow Statements
+cash_flow_statements = [
+    "consolidated_statements_of_cash_flows",
+    "statements_of_cash_flows",
+    "cash_flow_statements",
+]
+
+# Equity Statements
+equity_statements = [
+    "consolidated_statements_of_changes_in_equity",
+    "statements_of_changes_in_equity",
+    "consolidated_statements_of_stockholders_equity",
+    "statements_of_stockholders_equity",
+    "consolidated_statements_of_shareholders_equity",
+    "statements_of_shareholders_equity",
+    "consolidated_statements_of_redeemable_noncontrolling_interest_and_equity",
+    "consolidated_statements_of_partners_equity",
+    "statements_of_partners_equity",
+    "consolidated_statements_of_members_equity",
+    "statements_of_members_equity",
+]
+
+# Other Financial Tables
+other_financial = [
+    "financial_statements",
+    "financial_highlights",
+    "selected_financial_data",
+    "financial_data",
+    "ratio_of_earnings",
+    "unaudited_quarterly_financial_data",
+    "summary_of_significant_accounting_policies",
+]
+
+# Notes and Supplemental Tables
+notes_and_supplements = [
+    "notes_to_consolidated_financial_statements",
+    "notes_to_financial_statements",
+    "schedule_of_valuation_and_qualifying_accounts",
+    "summary_of_quarterly_financial_data",
+    "schedule_of_investee_earnings",
+]
+
+# Quarterly Reports
+[EdgarParser.FilingTypeProfiles."10-Q"]
+# Balance Sheets
+balance_sheets = [
+    "consolidated_balance_sheets",
+    "balance_sheets",
+    "statement_of_financial_position",
+    "consolidated_statement_of_financial_position",
+]
+
+# Income Statements
+income_statements = [
+    "consolidated_statements_of_operations",
+    "statements_of_operations",
+    "consolidated_statements_of_income",
+    "statements_of_income",
+    "consolidated_statements_of_earnings",
+    "statements_of_earnings",
+    "consolidated_statements_of_comprehensive_income",
+    "statements_of_comprehensive_income",
+]
+
+# Cash Flow Statements
+cash_flow_statements = [
+    "consolidated_statements_of_cash_flows",
+    "statements_of_cash_flows",
+]
+
+# Equity Statements
+equity_statements = [
+    "consolidated_statements_of_changes_in_equity",
+    "statements_of_changes_in_equity",
+    "consolidated_statements_of_stockholders_equity",
+    "statements_of_stockholders_equity",
+    "consolidated_statements_of_shareholders_equity",
+    "statements_of_shareholders_equity",
+]
+
+# Management Discussion
+management_discussion = [
+    "management_discussion_and_analysis",
+    "management_discussion",
+]
+
+# Current Reports
+[EdgarParser.FilingTypeProfiles."8-K"]
+sections = [
+    "financial_statements",
+    "pro_forma_financial_information",
+    "exhibits",
+    "signature",
+    "press_release",
+    "material_agreement_table",
+    "amendments_table",
+]
+
+# Foreign Annual Reports
+[EdgarParser.FilingTypeProfiles."20-F"]
+sections = [
+    "consolidated_balance_sheets",
+    "balance_sheets",
+    "statement_of_financial_position",
+    "consolidated_statements_of_operations",
+    "statements_of_operations",
+    "consolidated_statements_of_income",
+    "statements_of_income",
+    "consolidated_statements_of_comprehensive_income",
+    "statements_of_comprehensive_income",
+    "consolidated_statements_of_cash_flows",
+    "statements_of_cash_flows",
+    "consolidated_statements_of_changes_in_equity",
+    "statements_of_changes_in_equity",
+    "exchange_rates",
+    "selected_financial_data",
+    "operating_and_financial_review",
+]
