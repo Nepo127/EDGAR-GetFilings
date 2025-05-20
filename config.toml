@@ -1,7 +1,12 @@
+[FileTracker]
+db_path = "database/edgar_filings_metadata.db"
 # config.toml
+
+
 
 [edgar_file_grabber]
 SEC_EDGAR_USER_AGENT = "Horia Suciu (suciu.horia@gmail.com)"
+SEC_FILES_DOWNLOAD_FOLDER = "/Users/horiasuciu/Projects/Python/DataCollectionScripts/EDGAR_DATA_EXTRACTOR/saved-data"
 
 [Logging]
 # Available log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL

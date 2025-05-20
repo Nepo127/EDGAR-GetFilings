@@ -119,3 +119,16 @@
 - Support for major filing types (10-K, 10-Q, Form 4)
 - Table identification based on IDs
 - Heading-based section extraction
+
+### Updates:
+
+#### May 19th Updates
+
+Added:
+
+- edgar_file_provider.py - a class that provide the files requested. Internally this class will determine if the files exist already or need to be downloaded.
+- filing_tracker.py - thsi class implement the management of the files downloaded and parsed since inception. This is going ot be used by both file-provider and the file-parser modules
+
+Updated:
+
+- config.toml - created filing_tracker config section.
